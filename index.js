@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 80;
 
 //TODO: if we're feeling crazy, cache found words to avoid duplicates >:)
 
@@ -34,5 +34,5 @@ app.get('/word', async (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Server listening on port ${port}`)
+    console.log(`Server listening on port ${$PORT}`)
 })
