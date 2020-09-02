@@ -20,7 +20,9 @@ function getWordsFromFile(numWords, filePath) {
     return results;
 }
 // Without query params return 1 word
-
+app.get('/', (req, res) => {
+    res.send({ 'message': 'Welcome to the Random Words API' })
+})
 app.get('/word', async (req, res) => {
     let numWords = 0;
     req.query.n ? numWords = req.query.n : numWords = 1
