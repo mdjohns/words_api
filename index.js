@@ -5,7 +5,6 @@ const port = process.env.PORT || 80;
 
 //TODO: if we're feeling crazy, cache found words to avoid duplicates >:)
 
-
 function getWordsFromFile(numWords, filePath) {
     const file = fs.readFileSync(filePath);
     const parsed = JSON.parse(file);
@@ -19,10 +18,11 @@ function getWordsFromFile(numWords, filePath) {
 
     return results;
 }
-// Without query params return 1 word
+
 app.get('/', (req, res) => {
     res.send({ 'message': 'Welcome to the Random Words API' })
 })
+
 app.get('/word', async (req, res) => {
     let numWords = 0;
     req.query.n ? numWords = req.query.n : numWords = 1
@@ -30,7 +30,7 @@ app.get('/word', async (req, res) => {
     res.send(resp);
 
 })
-// With query params return n words
+
 
 
 app.listen(port, () => {
