@@ -34,5 +34,5 @@ app.get('/word', async (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Server listening on port ${$PORT}`)
+    console.log(`Server listening on port ${port}`)
 })
