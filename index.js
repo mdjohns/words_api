@@ -19,6 +19,12 @@ function getWordsFromFile(numWords, filePath) {
     return results;
 }
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*"); //TODO: update me
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+})
+
 app.get('/', (req, res) => {
     res.send('Welcome to my Random Words API. \n Accepts GET requests to /word with query param n for number of words to return')
 })
