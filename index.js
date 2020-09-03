@@ -20,7 +20,7 @@ function getWordsFromFile(numWords, filePath) {
 }
 
 app.get('/', (req, res) => {
-    res.send({ 'message': 'Welcome to the Random Words API' })
+    res.send('Welcome to my Random Words API. \n Accepts GET requests to /word with query param n for number of words to return')
 })
 
 app.get('/word', async (req, res) => {
