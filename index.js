@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 app.get('/word', async (req, res) => {
     let numWords = 0;
     req.query.n ? numWords = req.query.n : numWords = 1
-    const resp = getWordsFromFile(5, './data/words.json');
+    const resp = getWordsFromFile(numWords, './data/words.json');
     res.send(resp);
 
 })
