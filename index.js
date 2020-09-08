@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 const port = process.env.PORT || 80;
+const wordsFilePath = './data/words.json';
 
 //TODO: if we're feeling crazy, cache found words to avoid duplicates >:)
 
@@ -32,7 +33,7 @@ app.get('/', (req, res) => {
 app.get('/word', async (req, res) => {
     let numWords = 0;
     req.query.n ? numWords = req.query.n : numWords = 1
-    const resp = getWordsFromFile(numWords, './data/words.json');
+    const resp = getWordsFromFile(numWords, wordsFilePath);
     res.send(resp);
 
 })

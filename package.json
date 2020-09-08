@@ -4,7 +4,8 @@
   "description": "API that serves random words",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "update-words": "node utils/updateWords.js"
   },
   "author": "mdjohns",
   "license": "ISC",
